@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("registrationForm");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                if (validateForm()) {
+                    // Display a registration success alert
+                    alert("Registration successful! You will be redirected to the confirmation page.");
+
+                    // Redirect to confirmation page after a delay
+                    setTimeout(function() {
+                        window.location.href = "confirmation.html";
+                    }, 3000); // Adjust the time (in milliseconds) as needed
+                }
+            });
+
+            function validateForm() {
+                // Your validation logic here
+
+                return true; // Return false if validation fails
+            }
+        });
+    </script>
+</body>
+</html>
